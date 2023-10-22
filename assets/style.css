@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color: #f8f8f8;
+}
+.cs-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    background: white;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.cs-nav-ul{
+    background: #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.cs-navbar .cs-nav-link {
+    color: #222;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    box-shadow: 0 0 #222;
+    transition: .4s;
+    background-color: transparent;
+}
+.cs-navbar .cs-nav-link:hover,
+.cs-navbar .cs-nav-link.active {
+    box-shadow: inset 0 -2px #222;
+    background-color: #80808054;
+}
+.cs-card-container {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+}
+.cs-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    width: calc((100% / 3) - 8px);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: #fff;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+
+.cs-card .cs-card-title {
+    margin: 0;
+}
+.cs-card .cs-card-body {
+    font-size: 24px;
+}
+.filters {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.select-field{
+    width: max-content;
+    min-width: 160px;
+}
+
+.cs-chart {
+    padding: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.cs-chart-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.date-charts, .geo-charts, .type-charts {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.month-chart {
+    width: calc(60% - 7px);
+}
+.years-chart {
+    width: calc(40% - 7px);
+}
+
+.map-chart {
+    width: calc(67% - 7px);
+}
+.map-details {
+    width: calc(33% - 7px);
+}
+
+.type-bar-chart, .type-pie-chart{
+    width: calc(50% - 7px);
+}
+
+
+.form-section {
+    background: #fff;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.form-section.estimate {
+    transform: scale(0);
+    transition: .4s;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+.form-section.estimate.show {
+    height: auto;
+    transform: scale(1);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .cs-navbar {
+        flex-direction: column;
+    }
+    .filters {
+        justify-content: space-between;
+    }
+    .filter-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    .cs-card *{
+        font-size: 15px!important;
+    }
+    .select-field{
+        min-width: 140px;
+    }
+    .date-charts, .geo-charts, .type-charts {
+        flex-direction: column;
+    }
+    .date-charts > *, .geo-charts > *, .type-charts > * {
+        width: 100%;
+    }
+}
